@@ -1,8 +1,11 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
-      <q-toolbar class="">
-        <q-btn flat round dense icon="menu" @click="toggleMenu" />
+      <q-toolbar>
+        <q-btn class="q-mr-sm" flat round dense icon="menu" @click="toggleMenu" />
+
+        <q-separator dark vertical inset />
+
         <q-toolbar-title>
           Wärmemanagement im Haus von Barbara und Achim
         </q-toolbar-title>
