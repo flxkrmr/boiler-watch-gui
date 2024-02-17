@@ -22,7 +22,8 @@ jobs:
         cache: 'npm'
     - name: Setup Quasar CLI
       run: npm i -g @quasar/cli
-    - run: ls -la
+    - name: Build project
+      run: npm install
     - name: Build SPA
       run: quasar build
       
