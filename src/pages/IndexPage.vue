@@ -69,10 +69,10 @@
                   <TemperatureCard name="Datum" :value="weatherForecast.date" nonTemperature />
                 </div>
                 <div class="row q-mb-sm full-width">
-                  <TemperatureCard name="Min" :value="weatherForecast.min" />
+                  <TemperatureCard name="Min" :value="weatherForecast.min?.toString()" />
                 </div>
                 <div class="row q-mb-sm full-width">
-                  <TemperatureCard name="Max" :value="weatherForecast.max" />
+                  <TemperatureCard name="Max" :value="weatherForecast.max?.toString()" />
                 </div>
               </q-card-section>
             </q-card>
@@ -176,7 +176,6 @@ function updateTemperatures() {
       response.data.temperatures.forEach((temp) => {
         temperatures.value[temp.name] = temp.value
       })
-      console.log(temperatures.value.P1)
       lastUpdated.value = response.data.date
       connected.value = true
     })

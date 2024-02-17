@@ -2,6 +2,11 @@
 
 A fkn Boiler Monitor
 
+## TODO
+- Warnings IndexPage
+- Dynamic URL from js location..
+- History time line
+
 ## Install the dependencies
 ```bash
 yarn
@@ -11,7 +16,7 @@ npm install
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn quasar dev
 ```
 
 
