@@ -13,7 +13,7 @@
 	        v-model="updateRate"
 	        label="Auslese Interval (Sekunden)"
 	      />
-				
+
 				<q-input
 	        filled
 	        type="number"
@@ -67,10 +67,10 @@ function onSubmit() {
 			  color: 'red-4',
 			  textColor: 'white',
 			  icon: 'warning',
-			  message: 'Fehler beim speichern'
+			  message: 'Fehler beim Speichern'
 			})
 	  });
-	
+
 }
 
 function onReset() {

@@ -1,7 +1,9 @@
 <template>
   <q-pull-to-refresh class="width-flex-fixed q-px-md" @refresh="refresh">
     <q-page>
-      <h2 v-if="!connected">Not connected</h2>
+      <div v-if="!connected" class="fit">
+        <q-spinner class="q-ma-lg" color="primary" size="3em" :thickness="10" />
+      </div>
       <div v-if="connected" class="q-mt-md q-pl-md">
         <q-card class="row q-mb-md bg-grey-11 q-mr-md">
           <q-card-section class="full-width">
