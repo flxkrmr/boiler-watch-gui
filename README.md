@@ -49,7 +49,6 @@ It's always a good idea to start with a
 ```
 apt update
 apt upgrade
-apt remove apache2
 ```
 
 Install nginx
