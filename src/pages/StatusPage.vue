@@ -25,19 +25,18 @@
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
-const backendUrl = "http://" + location.host.split(":")[0] + ":8000"
-
 const sensors = ref([])
 const databaseSize = ref(null)
 
 const databaseSizeReadable = computed(() => {
-	return humanFileSize(databaseSize.value)
+  return humanFileSize(databaseSize.value)
 })
 
 function updateStatus() {
-  axios.get(backendUrl + '/health')
+  const url = process.env.API_URL + '/health'
+  axios.get(url)
     .then((response) => {
-			console.log(response)
+      console.log(response)
       sensors.value = response.data.sensor_config.sensors
       databaseSize.value = response.data.database_size_bytes
     })
@@ -50,8 +49,8 @@ function humanFileSize(bytes, si=false, dp=1) {
     return bytes + ' B';
   }
 
-  const units = si 
-    ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'] 
+  const units = si
+    ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
     : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
   let u = -1;
   const r = 10**dp;

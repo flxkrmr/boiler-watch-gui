@@ -97,7 +97,8 @@ function updateHistory() {
       break;
   }
 
-  axios.get('http://127.0.0.1:8000/temperatures/since/' + timeSinceDate.getTime())
+  const url = process.env.API_URL + '/temperatures/since/' + timeSinceDate.getTime()
+  axios.get(url)
     .then((response) => {
       const chartData = createChartData(response.data)
       chart.data = chartData

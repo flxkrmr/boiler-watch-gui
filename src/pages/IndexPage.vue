@@ -170,7 +170,8 @@ function updateWeather() {
 }
 
 function updateTemperatures() {
-  axios.get('http://127.0.0.1:8000/temperatures/last')
+  const url = process.env.API_URL + '/temperatures/last'
+  axios.get(url)
     .then((response) => {
       temperatures.value = []
       response.data.temperatures.forEach((temp) => {
