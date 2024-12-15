@@ -40,7 +40,8 @@ const keep = ref(null)
 const $q = useQuasar()
 
 function updateConfig() {
-  axios.get('http://127.0.0.1:8000/config')
+  const url = process.env.API_URL + '/config'
+  axios.get(url)
     .then((response) => {
       updateRate.value = response.data.interval_seconds
       keep.value = response.data.keep
