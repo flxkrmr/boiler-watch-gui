@@ -19,6 +19,9 @@ npm install
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
 yarn quasar dev
+
+# powershell with environment variables
+$env:API_URL="http://temperaturepi.fritz.box:8000"; yarn quasar dev
 ```
 
 ### Lint the files
@@ -45,7 +48,7 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-
 
 ## Serving the App on the Raspberry Pi
 
-It's always a good idea to start with a 
+It's always a good idea to start with a
 ```
 apt update
 apt upgrade
